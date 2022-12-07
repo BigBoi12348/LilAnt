@@ -99,7 +99,7 @@ public class FirstPersonController : MonoBehaviour
     public float jumpPower = 5f;
 
     // Internal Variables
-    private bool isGrounded = false;
+    private bool isGrounded = true;
 
     #endregion
 
@@ -381,7 +381,7 @@ public class FirstPersonController : MonoBehaviour
             }
             else
             {
-                isWalking = false;
+                isWalking = false; //ddd
             }
 
             // All movement calculations shile sprint is active
