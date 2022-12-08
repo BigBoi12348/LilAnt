@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Diagnostics.Contracts;
+using UnityEngine.SceneManagement;
 
 public class Points : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class Points : MonoBehaviour
         //}
         //score.text = point.ToString();
         //Debug.Log("bam");
+        if(point >= 10)
+        {
+            //SceneManager.LoadScene("Win");
+            Debug.Log("End");
+        }
     }
 
     private void OnTriggerEnter(Collider other)

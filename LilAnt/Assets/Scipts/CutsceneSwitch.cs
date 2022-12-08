@@ -14,5 +14,6 @@ public class CutsceneSwitch : MonoBehaviour
         yield return new WaitForSeconds(18f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene("Menu");
     }
 }
