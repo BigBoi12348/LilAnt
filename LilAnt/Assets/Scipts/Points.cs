@@ -18,15 +18,31 @@ public class Points : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //score.text = point.ToString();
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    point += 1;
+        //    score.text = point.ToString();
+        //    Debug.Log("bam");
+        //}
+        //score.text = point.ToString();
+        //Debug.Log("bam");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "bread")
+        if(other.gameObject.CompareTag("bread"))
         {
-            point++;
+            point += 1;
             score.text = point.ToString();
         }
+        //if (Input.GetKey(KeyCode.Q))
+        //{
+        //    point += 1;
+        //    score.text = point.ToString();
+        //    Debug.Log("bam");
+        //}
+        score.text = point.ToString();
+        Debug.Log("bam");
     }
 }
