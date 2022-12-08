@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.PlayerLoop;
 
 public class PlayerMovementTutorial : MonoBehaviour
 {
@@ -83,7 +84,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         MovePlayer();
     }
-
+   
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -107,9 +108,13 @@ public class PlayerMovementTutorial : MonoBehaviour
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         // on ground
-        if(grounded)
+        if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
+            Debug.Log("ban");
+        }
+            
+        
         // in air
         else if(!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
