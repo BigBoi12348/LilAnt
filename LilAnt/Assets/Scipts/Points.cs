@@ -9,6 +9,7 @@ public class Points : MonoBehaviour
 {
     public TextMeshProUGUI score;
     public int point = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,9 @@ public class Points : MonoBehaviour
         {
             point += 1;
             score.text = point.ToString();
+            Destroy(other.gameObject);
         }
+        
         //if (Input.GetKey(KeyCode.Q))
         //{
         //    point += 1;
